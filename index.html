@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Praveen S Portfolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --button-bg: #007bff;
+      --button-text: #ffffff;
+      --button-hover-bg: #0056b3;
+      --header-gradient: linear-gradient(90deg, #007bff, #00c6ff);
+    }
+
+    [data-theme='dark'] {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --button-bg: #1f1f1f;
+      --button-text: #ffffff;
+      --button-hover-bg: #333333;
+      --header-gradient: linear-gradient(90deg, #000000, #434343);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .l-header {
+      background: var(--header-gradient);
+      transition: background 0.4s ease;
+    }
+
+    .button {
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: var(--button-hover-bg);
+    }
+
+    .toggle-theme {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-theme:hover {
+      background-color: var(--button-hover-bg);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- THEME TOGGLE -->
+  <button class="toggle-theme" onclick="toggleTheme()">🌓 Theme</button>
+
+  <!-- HEADER -->
+  <header class="l-header">
+    <nav class="nav bd-container">
+      <a href="#" class="nav__logo">Praveen</a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section class="home" id="home">
+    <div class="home__container bd-container bd-grid">
+      <div class="home__data">
+        <h1 class="home__title">Hi, I'm Praveen</h1>
+        <h2 class="home__subtitle">Aspiring IT Professional | Full Stack Dev </h2>
+        <a href="#" class="button">Contact</a>
+      </div>
+      <div class="home__img">
+        <img src="assets/img/prefil.jpg" alt="Praveen Profile" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about section" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about__container bd-container bd-grid">
+      <img src="assets/img/about.jpg" alt="About Image" style="max-width: 300px; border-radius: 10px; margin: auto;">
+      <p class="about__description">
+        I am PRAVEEN S from Ramanathapuram, Tamil Nadu. Currently pursuing B.Tech in Information Technology at PSNA
+        College of Engineering and Technology, with a CGPA of 8.3. I am passionate about building full-stack web
+        applications and working on AI/ML and IoT-based systems.
+        <br /><br />
+        <strong>Projects:</strong><br />
+        • Smart AI Traffic Management System using YOLO and ultrasonic sensors.<br />
+        • Smart Waste Management System using IoT and real-time monitoring.<br />
+        • Adaptive Learning Platform using Java, JSP, MySQL.<br /><br />
+        <strong>Internships:</strong><br />
+        • Web Development at Trios Technologies (2025)<br />
+        • Web Development at CodSoft (2024)
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="skills section" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills__container bd-container bd-grid">
+      <ul class="skills__content">
+        <li class="skills__name">Python</li>
+        <li class="skills__name">C</li>
+        <li class="skills__name">Java (OOP)</li>
+        <li class="skills__name">HTML</li>
+        <li class="skills__name">CSS</li>
+        <li class="skills__name">JavaScript</li>
+        <li class="skills__name">SQL</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER & SCRIPT -->
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navClose = document.getElementById('nav-close');
+    const contactBtn = document.querySelector('.button');
+
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.add('show-menu');
+      });
+    }
+
+    if (navClose) {
+      navClose.addEventListener('click', () => {
+        navMenu.classList.remove('show-menu');
+      });
+    }
+
+    const navLink = document.querySelectorAll('.nav__link');
+    navLink.forEach(n => n.addEventListener('click', () => {
+      navMenu.classList.remove('show-menu');
+    }));
+
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 50;
+        const sectionId = current.getAttribute('id');
+        const navItem = document.querySelector(`.nav__menu a[href*="#${sectionId}"]`);
+
+        if (navItem) {
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navItem.classList.add('active-link');
+          } else {
+            navItem.classList.remove('active-link');
+          }
+        }
+      });
+    });
+
+    if (contactBtn) {
+      contactBtn.addEventListener('click', () => {
+        alert('Email: praveensp7205@gmail.com\nPhone: +91 6383449663\nLinkedIn: linkedin.com/in/praveen-s-1a7428324\nGitHub: https://github.com/praveen6256');
+      });
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('portfolio-theme', newTheme);
+    }
+
+    window.onload = function () {
+      const savedTheme = localStorage.getItem('portfolio-theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    };
+  </script>
+</body>
+
+</html>
