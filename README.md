@@ -1,6 +1,6 @@
 ![preview2](https://github.com/user-attachments/assets/4d890639-afff-45cd-ba60-4521d0eb05f9)
 
-## ✍️ About Me (Sample Text)
+## ✍️ About Me 
 
 > I am **PRAVEEN S** from Ramanathapuram, Tamil Nadu. I’m pursuing B.Tech in Information Technology at **PSNA College of Engineering and Technology** with a **CGPA of 8.3**.
 >
