@@ -1,4 +1,5 @@
-![preview2](https://github.com/user-attachments/assets/4d890639-afff-45cd-ba60-4521d0eb05f9)
+
+<img width="1857" height="872" alt="image" src="https://github.com/user-attachments/assets/6540bbe6-e285-4192-bc91-33f9e76160a2" />
 
 ## ✍️ About Me 
 
